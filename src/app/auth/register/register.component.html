@@ -1,0 +1,43 @@
+<h2>Hello, Guys!</h2>
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="#">
+			<input type="text" placeholder="Name" />
+			<input type="password" placeholder="Password" />
+			<button>Register</button>
+		</form>
+	</div>
+    <div class="gambar">
+    <img src="https://cdn.pixabay.com/photo/2017/12/02/17/47/wintry-2993370_960_720.jpg" width="900" height="500" >
+    </div>
+
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">				
+				<p>let's create an account and enjoy the fun!</p>	
+                        <input type="email" placeholder="Email" />			
+                        <input type="username" placeholder="Username" />
+                        <input type="password" placeholder="Password" />
+                    <div class="uk-flex uk-flex-right">
+                     <div class="uk-width-expand">           
+                           <br><br>
+                           <button class="ghost" routerLink ="/register">Register</button>	
+                                </div>
+                            </div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<script>const signUpButton = document.getElementById('signUp');
+	const signInButton = document.getElementById('signIn');
+	const container = document.getElementById('container');
+	
+	signUpButton.addEventListener('click', () => {
+		container.classList.add("right-panel-active");
+	});
+	
+	signInButton.addEventListener('click', () => {
+		container.classList.remove("right-panel-active");
+	});</script>
