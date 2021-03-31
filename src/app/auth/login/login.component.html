@@ -1,33 +1,12 @@
-<h2>Welcome :)</h2>
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<input type="text" placeholder="Name" />
-			<input type="password" placeholder="Password" />
-			<button>Register</button>
-		</form>
-	</div>
-
-	<div class="form-container sign-in-container">
-			<form action="uk-width-expand">
-						<input type="username" placeholder="Username" value="afnsptra" />
-						<input type="password" placeholder="Password" value="12345" />
-						<a href="/forgot">Forgot your password?</a>						
-						<button routerLink="/admin">LOGIN</button>	
-		</form>
-	</div>
-
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Guys!</h1>
-				<p>let's create an account and enjoy the fun!</p>
-				<button class="ghost" routerLink ="/register">Register</button>
+<div class="login">
+	<h1>Login</h1>
+    <form method="post">
+    	<input type="text" name="u" placeholder="Username" required="required" />
+        <input type="password" name="p" placeholder="Password" required="required" />
+        <button type="submit" class="btn btn-primary btn-block btn-large" routerLink="/admin">LOGIN</button>
+		<div class="uk-flex uk-flex-right">
+			<div class="uk-width-expand">
+			  <button mat-button routerLink="/register">Create Account</button>
+			  <button mat-button routerLink="/forgot">Forgot?</button>
 			</div>
-		</div>
-	</div>
 </div>
-
-
-
-          

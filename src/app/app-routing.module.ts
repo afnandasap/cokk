@@ -15,7 +15,7 @@ const routes: Routes = [
 	},
 	{
 		path:'admin',
-		loadChildren:()=>import('./admin/admin.module').then(mod=>mod.AdminModule)
+		loadChildren: ()=>import('./admin/admin.module').then(mod=>mod.AdminModule)
 	},
 	{
 		path:'forgot',
@@ -23,7 +23,7 @@ const routes: Routes = [
 	},
 	{
 		path:'public',
-		loadChildren:()=>import('./public/public.module').then(mod=>mod.PublicModule)
+		loadChildren: ()=>import('./public/public.module').then(mod=>mod.PublicModule)
 	},
 	{
 		path:'',

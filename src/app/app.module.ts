@@ -11,20 +11,27 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //ini Material
 import { MaterialDesign } from './material/material.module';
 import { ForgotComponent } from './auth/forgot/forgot.component';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import { GalleryComponent } from './gallery/gallery.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ForgotComponent
+    ForgotComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialDesign,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatCardModule
     
   ],
   providers: [],

@@ -4,6 +4,7 @@ import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialDesign } from '../material/material.module';
+import { GalleryComponent } from '../gallery/gallery.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,15 @@ const routes: Routes = [
       {
         path:'dashboard',
         component:DashboardComponent
+      },
+      {
+        path:'gallery',
+        component:GalleryComponent
+      },
+      {
+        path:'',
+        redirectTo:'/admin/dashboard',
+        pathMatch:'full'
       }
     ]
   }
