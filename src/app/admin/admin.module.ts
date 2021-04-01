@@ -4,7 +4,8 @@ import { AdminComponent } from './admin/admin.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MaterialDesign } from '../material/material.module';
-import { GalleryComponent } from '../gallery/gallery.component';
+import { ProductComponent } from '../auth/product/product.component';
+
 
 const routes: Routes = [
   {
@@ -16,8 +17,8 @@ const routes: Routes = [
         component:DashboardComponent
       },
       {
-        path:'gallery',
-        component:GalleryComponent
+        path:'product',
+        component:ProductComponent
       },
       {
         path:'',

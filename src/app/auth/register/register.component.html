@@ -1,12 +1,15 @@
 <div class="login">
 	<h1>REGISTER</h1>
     <form method="post">
-    	<input type="text" name="u" placeholder="Username" required="required" />
-		<input type="text" name="u" placeholder="Username" required="required" />
-        <input type="password" name="p" placeholder="Password" required="required" />
+		<mat-label>Name</mat-label>
+			<input placeholder="Username" value="">
+				<mat-label>Email</mat-label>
+            		<input placeholder="xxxxxxxx.com" value="">
+			<mat-label>Password</mat-label>
+        <input type="password" placeholder="Your password" value="">
         <button type="submit" class="btn btn-primary btn-block btn-large ">REGISTER</button>
-		<div class="uk-flex uk-flex-right">
-			<div class="uk-width-expand">
-				<button mat-button routerLink="/login">I have an account</button>
+			<div class="uk-flex uk-flex-right">
+				<div class="uk-width-expand">
+					<button mat-button routerLink="/login">I have an account</button>
 			</div>
 </div>

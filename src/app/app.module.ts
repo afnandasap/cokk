@@ -13,8 +13,10 @@ import { MaterialDesign } from './material/material.module';
 import { ForgotComponent } from './auth/forgot/forgot.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
-import { GalleryComponent } from './gallery/gallery.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { ProductComponent } from './auth/product/product.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     LoginComponent,
     RegisterComponent,
     ForgotComponent,
-    GalleryComponent
+    ProductComponent,
+    
   ],
   imports: [
     BrowserModule,

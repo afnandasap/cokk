@@ -12,4 +12,22 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  menu=[
+    {
+      name:'Dashboard',
+      icon:'space_dashboard',
+      url:'/admin/dashboard'
+    },
+    {
+      group:'Menu Group',
+      children:[
+        {
+          name:'Product',
+          icon:'production_quantity_limits',
+          url:'/admin/product'
+        }
+      ]
+    }
+  ];
+
 }
