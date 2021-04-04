@@ -14,7 +14,6 @@ import { ForgotComponent } from './auth/forgot/forgot.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { ProductComponent } from './auth/product/product.component';
 
 
 
@@ -24,8 +23,8 @@ import { ProductComponent } from './auth/product/product.component';
     LoginComponent,
     RegisterComponent,
     ForgotComponent,
-    ProductComponent,
     
+  
   ],
   imports: [
     BrowserModule,
@@ -35,6 +34,7 @@ import { ProductComponent } from './auth/product/product.component';
     MatSidenavModule,
     MatToolbarModule,
     MatCardModule
+  
     
   ],
   providers: [],
