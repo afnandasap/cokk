@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDetailComponent } from 'src/app/admin/product-detail/product-detail.component';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-product',
@@ -12,7 +13,8 @@ export class ProductComponent implements OnInit {
   book:any={};
   books:any=[];
   constructor(
-    public dialog:MatDialog
+    public dialog:MatDialog,
+    public api:ApiService
   ) {
 
    }
@@ -24,29 +26,23 @@ export class ProductComponent implements OnInit {
       author:'afnanda',
       publisher:'ada aja',
       year:2020,
+      isbn:'244242',
       price:3000000
     };
     this.getBooks();
   }
 
+  loading:boolean | undefined;
   getBooks()
   {
-    this.books=[
-      {
-        title:'angular pertama',
-        author:'afnanda',
-        publisher:'ada aja',
-        year:2020,
-        price:3000000
-      },
-      {
-        title:'angular kedua',
-        author:'afnanda saputra',
-        publisher:'ada aja yaaa',
-        year:2021,
-        price:6000000
-      }
-    ];
+    this.loading=true;
+    this.api.get('books').subscribe(result=>{
+      this.books=result;
+      this.loading=false;
+    },eror=>{
+      this.loading=false;
+      alert('ada masalah saat pengambilan data... Coba lagi deh!!!');
+    })
   }
 
 
@@ -60,15 +56,26 @@ export class ProductComponent implements OnInit {
          if(result)
          {
           if(idx==-1)this.books.push(result);
-          else this.books[idx]=result;
+          else this.books[idx]=data;
          }
         });
       }
 
-      DeleteProduct(idx: any)
+
+      loadingDelete:any={};
+      DeleteProduct(id: any,idx: any)
       {
         var conf=confirm('Delete item?');
         if(conf)
-        this.books.splice(idx,1);
+        this.loadingDelete[idx]=true;
+        {
+          this.api.delete('books/'+id).subscribe(result=>{
+            this.books.splice(idx,1);
+            this.loadingDelete[idx]=false;
+          },error=>{
+            this.loadingDelete[idx]=false;
+            alert('Tidak dapat menghapus data');
+          });
+        }
       }
     }

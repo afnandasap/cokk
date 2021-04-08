@@ -1,4 +1,9 @@
-<mat-card>
+<div *ngIf="loading" style="height: 300px;" class="uk-flex uk-flex-center uk-flex-middle">
+    <mat-spinner></mat-spinner>
+</div>
+
+
+<mat-card *ngIf='!loading'>
     <mat-card-header>
         <mat-card-title>{{title}}</mat-card-title>
     </mat-card-header>
@@ -14,6 +19,7 @@
                 <th>Penulis</th>
                 <th>Penerbit</th>
                 <th>Tahun Terbit</th>
+                <th>ISBN</th>
                 <th>Harga</th>
                 <th align="right"></th>
             </thead>
@@ -24,10 +30,11 @@
                     <td>{{book.author}}</td>
                     <td>{{book.publisher}}</td>
                     <td>{{book.year}}</td>
+                    <td>{{book.isbn}}</td>
                     <td>{{book.price}}</td>
                     <td align="right">
                         <button mat-button color="primary" (click)="ProductDetail(book,idx)">Edit</button>
-                        <button mat-button color="accent" (click)="DeleteProduct(idx)">Delete</button>
+                        <button mat-button color="accent" (click)="DeleteProduct(book.id, idx)"[disabled]="loadingDelete[idx]">{{loadingDelete[idx] ? 'Menghapus..':'Delete'}}</button>
                     </td>
                 </tr>
             </tbody>

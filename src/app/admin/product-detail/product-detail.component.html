@@ -19,11 +19,15 @@
         <input matInput [(ngModel)]="data.year">
     </mat-form-field>
     <mat-form-field appearance="outline" style="width: 100%;">
+        <mat-label>ISBN</mat-label>
+        <input matInput [(ngModel)]="data.isbn">
+    </mat-form-field>
+    <mat-form-field appearance="outline" style="width: 100%;">
         <mat-label>Harga</mat-label>
         <input matInput [(ngModel)]="data.price">
     </mat-form-field>
 </div>
 <div mat-dialog-action align="end">
 <button mat-button mat-dialog-close>Batal</button>
-<button mat-flat-button (click)="saveData()">Simpan</button>
+<button mat-flat-button (click)="saveData()"[disabled]="loading">{{loading ? 'Menyimpan..':'Simpan'}}</button>
 </div>
