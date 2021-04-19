@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -9,10 +10,23 @@ import { ApiService } from 'src/app/services/api.service';
 export class LoginComponent implements OnInit {
   user:any={};
   constructor(
-    public api:ApiService
+    public api:ApiService,
+    public router:Router
   ) { }
 
   ngOnInit(): void {
+    
+  }
+
+  login()
+  {
+    this.api.login(this.user.email, this.user.password).subscribe(res=>{
+      localStorage.setItem('appToken',JSON.stringify(res)); 
+      this.router.navigate(['admin/dashboard']);
+    },error=>{
+      alert('Tidak dapat login');
+    });
+      
   }
 
 }

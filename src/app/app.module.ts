@@ -15,6 +15,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ImageCropperModule } from 'ngx-image-cropper';
+
+
 
 
 @NgModule({
@@ -24,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     ForgotComponent,
     
-  
+ 
   ],
   imports: [
     BrowserModule,
@@ -34,9 +38,10 @@ import { HttpClientModule } from '@angular/common/http';
     MatSidenavModule,
     MatToolbarModule,
     MatCardModule,
-    HttpClientModule
-  
-    
+    HttpClientModule,
+    FormsModule,
+    ImageCropperModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

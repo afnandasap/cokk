@@ -36,12 +36,11 @@ export class ProductComponent implements OnInit {
   getBooks()
   {
     this.loading=true;
-    this.api.get('books').subscribe(result=>{
+    this.api.get('bookswithauth').subscribe(result=>{
       this.books=result;
       this.loading=false;
-    },eror=>{
+    },error=>{
       this.loading=false;
-      alert('ada masalah saat pengambilan data... Coba lagi deh!!!');
     })
   }
 
