@@ -49,6 +49,7 @@ delete(url: any)
   this.getToken();
   return this.http.delete(this.serverUrl+url,this.httpOptions);
  }
+ 
 
  //register
  register(email: any,password: any)
@@ -60,5 +61,12 @@ delete(url: any)
  {
    return this.http.post(this.serverUrl+'auth/login',{email:email,password:password});
  }
+
+ //upload file
+upload(file: any)
+{
+   return this.http.post(this.serverUrl+'upload/book',file);
+}
+
 }
 

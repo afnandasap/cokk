@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductComponent } from './product/product.component';
 import { ImageUploaderComponent } from './image-uploader/image-uploader.component';
 import { GalleryComponent } from './gallery/gallery.component';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
     ProductComponent,
     ProductDetailComponent,
     ImageUploaderComponent,
-    GalleryComponent
+    GalleryComponent,
+    FileUploaderComponent
   ],
   imports: [
     CommonModule,

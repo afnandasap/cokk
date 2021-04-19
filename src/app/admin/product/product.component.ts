@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductDetailComponent } from 'src/app/admin/product-detail/product-detail.component';
 import { ApiService } from 'src/app/services/api.service';
+import { FileUploaderComponent } from '../file-uploader/file-uploader.component';
 
 @Component({
   selector: 'app-product',
@@ -76,5 +77,17 @@ export class ProductComponent implements OnInit {
             alert('Tidak dapat menghapus data');
           });
         }
+      }
+
+
+      Uploadfile(data: any)
+      {
+        let dialog= this.dialog.open(FileUploaderComponent  , {
+          width: '500px',
+          data: data,
+      });
+        dialog.afterClosed().subscribe(result=> {
+        });
+        
       }
     }
