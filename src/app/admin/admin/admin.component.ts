@@ -18,12 +18,11 @@ export class AdminComponent implements OnInit {
     this.checkLogin();
   }
 
-  checkLogin(){
+  checkLogin()
+  {
     this.api.get('bookswithauth/status').subscribe(res=>{
-      //is logged in
       return;
-    }, err=>{
-      //not logged in
+    }, error=>{
       this.router.navigate(['/login']);
     })
   }
@@ -36,6 +35,7 @@ export class AdminComponent implements OnInit {
       window.location.reload();
     }
   }
+
 
 
   menu=[
@@ -51,7 +51,7 @@ export class AdminComponent implements OnInit {
           name:'Product',
           icon:'production_quantity_limits',
           url:'/admin/product'
-        }
+        },
       ]
     }
   ];

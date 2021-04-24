@@ -8,7 +8,6 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit { 
-  
   constructor(
     public api:ApiService,
     public router:Router
