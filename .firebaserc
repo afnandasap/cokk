@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "katalog-buku-678f4": {
+      "hosting": {
+        "myAngular": [
+          "katalog-buku-678f4"
+        ]
+      }
+    }
+  }
+}

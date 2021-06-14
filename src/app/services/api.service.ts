@@ -5,10 +5,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  serverUrl:any='http://api.sunhouse.co.id/bookstore/index.php/';
+  //serverUrl:any='http://api.sunhouse.co.id/bookstore/index.php/';
+  serverUrl:any='http://localhost:1337/';
   constructor(
     public http:HttpClient
-  ) { }
+  ) { } 
 
 httpOptions:any;
  getToken()
@@ -20,7 +21,7 @@ httpOptions:any;
      this.httpOptions={
        headers:new HttpHeaders({
          'Content-Type': 'application/json',
-         'Authorization': 'Bearer '+tkn.token
+         'Authorization': 'Bearer '+tkn.jwt
        })
      }
    }
@@ -59,7 +60,7 @@ delete(url: any)
 
  login(email: any,password: any)
  {
-   return this.http.post(this.serverUrl+'auth/login',{email:email,password:password});
+   return this.http.post(this.serverUrl+'auth/local',{identifier:email,password:password});
  }
 
  upload(file:any)

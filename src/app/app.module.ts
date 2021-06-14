@@ -17,6 +17,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+
+//firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
+
+
 
 
 
@@ -40,10 +47,13 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     MatCardModule,
     HttpClientModule,
     FormsModule,
-    ImageCropperModule
+    ImageCropperModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    
+    
  
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: HashLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

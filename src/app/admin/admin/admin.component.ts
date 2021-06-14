@@ -8,24 +8,28 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
-
+  loading:boolean=true;
   constructor(
     public api:ApiService,
     public router:Router
   ) { }
 
   ngOnInit(): void {
-    this.checkLogin();
+    //this.checkLogin();
   }
 
   checkLogin()
   {
+    this.loading=false;
     this.api.get('bookswithauth/status').subscribe(res=>{
       return;
-    }, error=>{
-      this.router.navigate(['/login']);
-    })
+    },error=>{
+      this.loading=false;
+     //this.router.navigate(['/login']);
+    });
   }
+
+  
 
   logout()
   {
@@ -35,6 +39,7 @@ export class AdminComponent implements OnInit {
       window.location.reload();
     }
   }
+
 
 
 
